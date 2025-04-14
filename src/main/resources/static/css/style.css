@@ -310,3 +310,99 @@ button[type="submit"]:hover {
 .form-container .button-group a:hover {
     background-color: #5a6268;
 }
+
+@media (max-width: 1024px) {
+    .content {
+        margin-left: 240px;
+        padding: 20px;
+    }
+
+    .form-container {
+        width: 90%;
+    }
+
+    .login-container {
+        width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        border-right: none;
+        border-bottom: 1px solid #34495e;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 15px;
+    }
+
+    .sidebar h2 {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    .sidebar ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .sidebar ul li {
+        margin: 5px 10px;
+    }
+
+    .sidebar ul li a {
+        padding: 10px 12px;
+    }
+
+    .content {
+        margin-left: 0;
+        margin-top: 20px;
+        padding: 20px;
+        width: 100%;
+    }
+
+    .form-container,
+    .login-container {
+        width: 95%;
+        margin: 20px auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .landing-button,
+    button[type="submit"],
+    .content .add-button a,
+    .form-container .button-group button,
+    .form-container .button-group a,
+    .content .button-container a,
+    .content .button-container button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .form-container .button-group {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .form-container {
+        padding: 20px;
+    }
+
+    .content th, .content td {
+        padding: 8px 10px;
+        font-size: 0.9em;
+    }
+}
