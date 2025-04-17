@@ -13,64 +13,68 @@ Before running the project, make sure you have the following installed:
 
 ## Project Setup and Running Instructions
 
-### 1. Clone the Repository
+# HR Portal - Spring Boot & PostgreSQL Project
 
-Clone the repository to your local machine:
+## 1. Clone the Repository
 
 ```bash
 git clone <repository_url>
 cd <project_directory>
+2. Configure PostgreSQL
+Make sure PostgreSQL is installed and running.
+Create a new database for the project (e.g., hr_portal_db).
 
-## 2. Configure PostgreSQL
+Update the file: src/main/resources/application.properties with your PostgreSQL credentials:
 
-Make sure PostgreSQL is installed and running. Create a new database for the project (e.g., `hr_portal_db`).
-
-Update `src/main/resources/application.properties` with your PostgreSQL connection details:
-
-```properties
+properties
+Copy
+Edit
 spring.datasource.url=jdbc:postgresql://localhost:5432/hr_portal_db
 spring.datasource.username=your_database_username
 spring.datasource.password=your_database_password
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
+3. Build and Run the Application
+Using Eclipse
+Open the project in Eclipse.
 
-## 3. Build and Run the Application
+Right-click the project → Run As → Spring Boot App.
 
-### Using Eclipse
+Using Command Line
+Open the terminal inside your project directory and run:
 
-1. Open the project in **Eclipse**.
-2. Right-click the project → **Run As** → **Spring Boot App**.
+bash
+Copy
+Edit
+./mvnw spring-boot:run
+The application will start at: http://localhost:8080
 
-### Using Command Line
+4. Access the Frontend
+After running the backend, open your browser and go to:
 
-1. Open the terminal in the project directory.
-2. Run the following command to start the Spring Boot application:
-
-   ```bash
-   ./mvnw spring-boot:run
-
-
-## 4. Access the Frontend
-Once the application is running, open your browser and go to:
-
+text
+Copy
+Edit
 http://localhost:8080/index.html
+You should see the HR Portal login page.
 
-#### You should be able to see the login page.
+Notes
+All frontend files are located in: src/main/resources/static
 
-## Notes:
-Frontend files are located in src/main/resources/static.
+If you want to test frontend separately using Live Server (VS Code), you can open index.html directly in your browser without any backend.
 
-If you're running the frontend separately (e.g., with VSCode or Live Server), you can directly open index.html in a browser for testing.
+Summary of Steps
+Clone the repository: First step for setting up the project.
+
+Configure PostgreSQL: Set up the database with credentials.
+
+Build and Run: Run project via Eclipse or command line.
+
+Access Frontend: Open index.html from static folder or browser.
 
 
-### Steps:
 
-1. **Clone the repository**: The first step for setting up the project.
-2. **Configure PostgreSQL**: How to configure the PostgreSQL database.
-3. **Build and Run**: Instructions for running the project, both via Eclipse or command line.
-4. **Access Frontend**: Details for accessing the frontend after the application is running.
 
-This should work perfectly for your needs! Simply copy and paste it into a new `README.md` file in the root of your project.
 
 
 
