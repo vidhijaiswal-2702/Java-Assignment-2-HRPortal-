@@ -1,0 +1,279 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to right, #0066cc, #33ccff);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+  }
+  
+  h1 {
+    margin-top: 40px;
+    font-size: 36px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+  }
+  
+  h2 {
+    font-size: 28px;
+    color: #0066cc;
+    margin-bottom: 20px;
+  }
+  
+  /* Button Group */
+  .button-group {
+    margin: 30px;
+  }
+  
+  .button-group button {
+    padding: 12px 24px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 6px;
+    background-color: #ffffff;
+    color: #0066cc;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .button-group button:hover {
+    background-color: #cceeff;
+    transform: scale(1.05);
+  }
+  
+  /* Form Container */
+  .form-container {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    color: #333;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .form-container.active {
+    display: flex;
+    opacity: 1;
+  }
+  
+  /* Input Styles */
+  input {
+    margin: 10px 0;
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border 0.3s ease;
+  }
+  
+  input:focus {
+    border: 1px solid #0066cc;
+    outline: none;
+  }
+  
+  /* Submit Button */
+  button[type="submit"] {
+    background-color: #0066cc;
+    color: white;
+    font-weight: bold;
+    padding: 12px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #005bb5;
+    transform: scale(1.05);
+  }
+  
+  /* Error Messages */
+  #errorMsg,
+  #errorMsgRegister {
+    color: red;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  
+  /* Dashboard Container */
+  .dashboard-container {
+    width: 90%;
+    max-width: 800px;
+    margin: 50px auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #ccc;
+    transition: transform 0.3s ease;
+  }
+  
+  .dashboard-container:hover {
+    transform: scale(1.02);
+  }
+  
+  /* Table Styles */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  table,
+  th,
+  td {
+    border: 1px solid #ddd;
+  }
+  
+  th,
+  td {
+    padding: 12px;
+    text-align: left;
+    font-size: 14px;
+  }
+  
+  th {
+    background-color: #f1f1f1;
+  }
+  
+  button {
+    padding: 5px 10px;
+    background: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+  
+  button:hover {
+    background: #0056b3;
+    transform: scale(1.05);
+  }
+  
+  /* Hover Effects on Table Row */
+  table tr:hover {
+    background-color: #f4f4f4;
+    cursor: pointer;
+  }
+  
+  /* Media Queries for Responsiveness */
+  
+  /* For tablets and small screens (between 600px and 1000px) */
+  @media (max-width: 1000px) {
+    body {
+      padding: 10px;
+      justify-content: flex-start;
+    }
+  
+    .form-container {
+      width: 80%;
+    }
+  
+    .dashboard-container {
+      width: 95%;
+      margin-top: 30px;
+    }
+  
+    h1 {
+      font-size: 30px;
+    }
+  
+    .button-group button {
+      padding: 10px 20px;
+      font-size: 14px;
+    }
+  
+    table th, table td {
+      padding: 8px;
+      font-size: 12px;
+    }
+  }
+  
+  /* For mobile screens (between 300px and 600px) */
+  @media (max-width: 600px) {
+    body {
+      flex-direction: column;
+      padding: 10px;
+      justify-content: flex-start;
+    }
+  
+    h1 {
+      font-size: 26px;
+    }
+  
+    h2 {
+      font-size: 24px;
+    }
+  
+    .form-container {
+      width: 90%;
+      padding: 20px;
+    }
+  
+    .button-group button {
+      padding: 8px 16px;
+      font-size: 14px;
+    }
+  
+    .form-container input {
+      padding: 8px;
+      font-size: 12px;
+    }
+  
+    button[type="submit"] {
+      padding: 10px;
+      font-size: 14px;
+    }
+  
+    .dashboard-container {
+      width: 100%;
+      margin-top: 20px;
+      padding: 20px;
+    }
+  
+    table {
+      font-size: 12px;
+    }
+  
+    table th, table td {
+      padding: 8px;
+    }
+  }
+  
+  /* For very small screens (less than 300px) */
+  @media (max-width: 300px) {
+    .form-container {
+      width: 100%;
+      padding: 15px;
+    }
+  
+    .button-group button {
+      width: 100%;
+      padding: 12px;
+    }
+  
+    table th, table td {
+      font-size: 10px;
+      padding: 6px;
+    }
+  
+    button {
+      width: 100%;
+      padding: 10px;
+      font-size: 14px;
+    }
+  }
+  
+  

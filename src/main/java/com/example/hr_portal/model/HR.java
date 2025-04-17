@@ -1,5 +1,6 @@
 package com.example.hr_portal.model;
 
+
 import jakarta.persistence.*;
 
 @Entity
@@ -16,7 +17,6 @@ public class HR {
     @Column(nullable = false)
     private String password;
 
-    // Default constructor (required by JPA)
     public HR() {
     }
 
@@ -27,10 +27,6 @@ public class HR {
 
     public Long getId() {
         return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getEmail() {

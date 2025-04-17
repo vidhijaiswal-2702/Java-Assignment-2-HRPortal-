@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HR Portal</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <h1>Welcome to the HR Portal</h1>
+
+  <div class="button-group">
+    <button onclick="showForm('login')">Login</button>
+    <button onclick="showForm('register')">Register</button>
+  </div>
+
+  <div id="loginFormContainer" class="form-container">
+    <h2>Login</h2>
+    <form id="loginForm">
+      <input type="email" id="email" placeholder="Email" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <button type="submit">Login</button>
+      <p id="errorMsg"></p>
+    </form>
+  </div>
+
+  <div id="registerFormContainer" class="form-container">
+    <h2>Register</h2>
+    <form id="registerForm">
+      <input type="text" id="name" placeholder="Name" required />
+      <input type="email" id="regEmail" placeholder="Email" required />
+      <input type="password" id="regPassword" placeholder="Password" required />
+      <button type="submit">Register</button>
+      <p id="errorMsgRegister"></p>
+    </form>
+  </div>
+
+  <script>
+    function showForm(formType) {
+      document.getElementById("loginFormContainer").classList.remove("active");
+      document.getElementById("registerFormContainer").classList.remove("active");
+
+      if (formType === 'login') {
+        document.getElementById("loginFormContainer").classList.add("active");
+      } else {
+        document.getElementById("registerFormContainer").classList.add("active");
+      }
+    }
+  </script>
+
+  <script src="js/login.js"></script>
+  <script src="js/register.js"></script>
+</body>
+</html>

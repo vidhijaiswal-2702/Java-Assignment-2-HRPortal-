@@ -1,47 +1,40 @@
 package com.example.hr_portal.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
+@Table(name = "employees")
 public class Employee {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
+
+    private String fullName;
     private String department;
     private String email;
-    private Double salary;
+    private double salary;
 
-    // Default constructor (required by JPA)
     public Employee() {
     }
 
-    public Employee(String name, String department, String email, Double salary) {
-        this.name = name;
+    public Employee(String fullName, String department, String email, double salary) {
+        this.fullName = fullName;
         this.department = department;
         this.email = email;
         this.salary = salary;
     }
 
-    // Getters and setters
     public Long getId() {
         return id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public String getFullName() {
+        return fullName;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
     public String getDepartment() {
@@ -60,11 +53,11 @@ public class Employee {
         this.email = email;
     }
 
-    public Double getSalary() {
+    public double getSalary() {
         return salary;
     }
 
-    public void setSalary(Double salary) {
+    public void setSalary(double salary) {
         this.salary = salary;
     }
 }

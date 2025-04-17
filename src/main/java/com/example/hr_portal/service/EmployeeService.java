@@ -1,33 +1,46 @@
 package com.example.hr_portal.service;
 
+
 import com.example.hr_portal.model.Employee;
 import com.example.hr_portal.repository.EmployeeRepository;
+
+import com.example.hr_portal.exception.ResourceNotFoundException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class EmployeeService {
 
     @Autowired
-    private EmployeeRepository employeeRepository;
+    private EmployeeRepository employeeRepo;
 
-    public List<Employee> getAllEmployees() {
-        return employeeRepository.findAll();
+    public List<Employee> getAll() {
+        return employeeRepo.findAll();
     }
 
-    public Employee getEmployeeById(Long id) {
-        Optional<Employee> employee = employeeRepository.findById(id);
-        return employee.orElse(null);
+    public Employee getById(Long id) {
+        return employeeRepo.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Employee not found with ID: " + id));
     }
 
-    public void saveEmployee(Employee employee) {
-        employeeRepository.save(employee);
+    public Employee save(Employee employee) {
+        return employeeRepo.save(employee);
     }
 
-    public void deleteEmployee(Long id) {
-        employeeRepository.deleteById(id);
+    public Employee update(Long id, Employee updatedEmployee) {
+        Employee existing = getById(id); // throws exception if not found
+        existing.setFullName(updatedEmployee.getFullName());
+        existing.setDepartment(updatedEmployee.getDepartment());
+        existing.setEmail(updatedEmployee.getEmail());
+        existing.setSalary(updatedEmployee.getSalary());
+        return employeeRepo.save(existing);
+    }
+
+    public void delete(Long id) {
+        Employee employee = getById(id); // throws exception if not found
+        employeeRepo.delete(employee);
     }
 }

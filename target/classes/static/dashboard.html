@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HR Dashboard</title>
+  <link rel="stylesheet" href="css/dashboard.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> <!-- Include SweetAlert2 -->
+</head>
+<body>
+
+  <div class="sidebar">
+    <h2>HR Dashboard</h2>
+    <ul>
+      <li onclick="showSection('create')">➕ Create</li>
+      <li onclick="showSection('read')">📄 View All</li>
+      <li onclick="showSection('update')">✏️ Update</li>
+      <li onclick="showSection('delete')">🗑️ Delete</li>
+    </ul>
+  </div>
+
+  <div class="main-content">
+    
+    <!-- Create Section -->
+    <section id="create" class="dashboard-section">
+      <h3>Create Employee</h3>
+      <form id="employeeForm">
+        <input type="hidden" id="empId" name="empId">
+        <input type="text" name="fullName" placeholder="Full Name" required>
+        <input type="text" name="department" placeholder="Department" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="number" name="salary" placeholder="Salary" required>
+        <button type="submit">Save</button>
+      </form>
+    </section>
+
+    <!-- View Section -->
+    <section id="read" class="dashboard-section">
+      <h3>All Employees</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th><th>Name</th><th>Department</th><th>Email</th><th>Salary</th><th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="employeeTableBody"></tbody>
+      </table>
+    </section>
+
+    <!-- Update Section -->
+    <section id="update" class="dashboard-section">
+      <h3>Update Employee</h3>
+      <p>Select an employee from the "View All" section to edit.</p>
+    </section>
+
+    <!-- Delete Section -->
+    <section id="delete" class="dashboard-section">
+      <h3>Delete Employee</h3>
+      <p>Use the delete button from the "View All" section to remove employee records.</p>
+    </section>
+
+  </div>
+
+  <script src="js/dashboard.js"></script>
+</body>
+</html>
