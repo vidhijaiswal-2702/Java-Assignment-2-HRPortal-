@@ -4,7 +4,7 @@ A web-based HR management portal built with **Spring Boot**, **PostgreSQL**, and
 
 ---
 
-## 🛠️ 1. Clone the Repository
+🛠️ 1. Clone the Repository
 
 ```bash
 git clone <repository_url>
