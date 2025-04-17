@@ -4,53 +4,76 @@ A web-based HR management portal built with **Spring Boot**, **PostgreSQL**, and
 
 ---
 
-🛠️ 1. Clone the Repository
+## 🛠️ 1. Clone the Repository
+```bash 
+ git clone <repository_url> </br>
+ cd <project_directory>
 
-```bash
-git clone <repository_url>
-cd <project_directory>
-🗄️ 2. Configure PostgreSQL
-Make sure PostgreSQL is installed and running on your machine. Create a database named hr_portal_db (or any name you prefer). Update your database credentials in the following file:
+ ```
+
+ ## 🗄️ 2. Configure PostgreSQL
+Make sure PostgreSQL is installed and running on your machine.
+
+Create a database named hr_portal_db (or any name you prefer).
+
+Update your database credentials in the following file:
 
 Path: src/main/resources/application.properties
 
-Properties
-
+```bash
 spring.datasource.url=jdbc:postgresql://localhost:5432/hr_portal_db
 spring.datasource.username=your_database_username
 spring.datasource.password=your_database_password
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
-🚀 3. Build and Run the Application
+```
+
+## 🚀 3. Build and Run the Application
 ✅ Using Eclipse
-Open the project in Eclipse IDE. Right-click the project → Run As → Spring Boot App.
+Open the project in Eclipse IDE.
+
+Right-click the project → Run As → Spring Boot App.
 
 💻 Using Command Line
 Navigate to your project folder and run:
 
-Bash
-
+```bash
 ./mvnw spring-boot:run
+```
 After a few seconds, your backend will be up and running at:
-
+```bash
 http://localhost:8080
-🌐 4. Access the Frontend
+```
+## 🌐 4. Access the Frontend
 Once the Spring Boot app is running, open your browser and go to:
 
+```bash
 http://localhost:8080/index.html
+```
 ✅ You should see the HR Portal login or dashboard page (depending on your setup).
 
-🗂️ Notes
+---
+## 🗂️ Notes
 All frontend files (index.html, dashboard.html, CSS, JS) are located in:
-
 src/main/resources/static/
+
 You can also test the frontend separately (e.g., with Live Server in VS Code) by simply opening index.html in your browser.
 
-📋 Summary of Steps
+---
+## 📋 Summary of Steps
 Clone the repository
+
 Configure PostgreSQL database
+
 Build and run the Spring Boot app
+
 Open the frontend in browser at http://localhost:8080/index.html
+
+---
+
+
+
+
 
 
 
