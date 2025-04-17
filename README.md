@@ -6,7 +6,7 @@ A web-based HR management portal built with **Spring Boot**, **PostgreSQL**, and
 
 ## 🛠️ 1. Clone the Repository
 ```bash 
- git clone <repository_url> </br>
+ git clone https://github.com/vidhijaiswal-2702/Java-Assignment-2-HRPortal.git
  cd <project_directory>
 
  ```
@@ -31,6 +31,7 @@ spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
 ## 🚀 3. Build and Run the Application
 ✅ Using Eclipse
 Open the project in Eclipse IDE.
+(Or any other IDE)
 
 Right-click the project → Run As → Spring Boot App.
 
